@@ -24,7 +24,7 @@ Stage -2
 
 <img width="1452" height="858" alt="Screenshot 2025-09-21 at 2 06 01 AM" src="https://github.com/user-attachments/assets/4a774718-2f9a-4f5e-a80e-18d79659a5f9" />
 
-<img width="1460" height="856" alt="Screenshot 2025-09-21 at 2 06 15 AM" src="https://github.com/user-attachments/assets/28e96407-37f8-4e7f-8ef3-c0eb64
+<img width="1460" height="856" alt="Screenshot 2025-09-21 at 2 06 15 AM" src="https://github.com/user-attachments/assets/28e96407-37f8-4e7f-8ef3-c0eb64278311" />
 
 <img width="1461" height="854" alt="Screenshot 2025-09-21 at 2 06 29 AM" src="https://github.com/user-attachments/assets/138f6a2c-e5fd-4335-9a9e-1e1c8a3d618a" />
-278311" />
+
