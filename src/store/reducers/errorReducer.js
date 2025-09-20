@@ -31,6 +31,7 @@ export const errorReducer = (state = initialState, action) => {
                 categoryLoader: false,
             };
         case "IS_ERROR":
+            console.log("❌ Error reducer triggered with payload:", action.payload);
             return {
                 ...state,
                 isLoading: false,
@@ -38,12 +39,14 @@ export const errorReducer = (state = initialState, action) => {
                 btnLoader: false,
                 categoryLoader: false,
             }
+            
         case "CATEGORY_SUCCESS":
             return {
                 ...state,
                 categoryLoader: false,
                 categoryError: null,
             };
+
         case "CATEGORY_LOADER":
             return {
                 ...state,
