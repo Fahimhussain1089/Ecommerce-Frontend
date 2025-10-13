@@ -13,28 +13,28 @@ import DemoData from "../utils/DemoData";
 
 const Home = () => {
     const dispatch = useDispatch();
-    // const {products} = useSelector((state) => state.products);//when server will be run . then uncomment it 
+    const {products} = useSelector((state) => state.products);//when server will be run . then uncomment it 
     const { isLoading, errorMessage } = useSelector(
         (state) => state.errors
     );
-    // useEffect(() => {
-    //     dispatch(fetchProducts());
-    // }, [dispatch]);
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [dispatch]);
 
 //------------------------demo data with demo category ------------------------------
    //useProductFilter(); //to run the queryString //same work of both
     // ⚡ Add a flag to control demo mode
-    const [useDemo, setUseDemo] = useState(true);
-     useEffect(() => {
-        if (!useDemo) {
-            dispatch(fetchCategories());
-            // dispatch(fetchProducts());
-        }
-    }, [dispatch, useDemo]);
+    // const [useDemo, setUseDemo] = useState(true);
+    //  useEffect(() => {
+    //     if (!useDemo) {
+    //         dispatch(fetchCategories());
+    //         // dispatch(fetchProducts());
+    //     }
+    // }, [dispatch, useDemo]);
 
-    // useEffect(() => {
-    //        dispatch(fetchCategories());
-    //    }, [dispatch]);
+    useEffect(() => {
+        //   dispatch(fetchCategories());
+       }, [dispatch]);
 
  const pagination = {
         totalPages: 10,        // pretend there are 5 pages
@@ -67,8 +67,8 @@ const Home = () => {
                     ) : (
                         <div className="pb-6 pt-14 grid 2xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-y-6 gap-x-6">
                             {
-                                // products && products.map((item,i) => <ProductCard key={i}{...item}/>)
-                                DemoData && DemoData.map((item,i) => <ProductCard key={i} {...item}/>)
+                                 products && products.map((item,i) => <ProductCard key={i}{...item}/>)
+                              //  DemoData && DemoData.map((item,i) => <ProductCard key={i} {...item}/>)
                             }
                         
                         </div>

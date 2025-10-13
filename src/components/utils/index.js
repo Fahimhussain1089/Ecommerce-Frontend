@@ -65,6 +65,7 @@ export const sellerNavigation = [
   }
 ];
 
+
 // Fallback demo categories when backend is not working
 export const demoCategories = [
         { categoryId: 2, categoryName: "Demo Clothing" },

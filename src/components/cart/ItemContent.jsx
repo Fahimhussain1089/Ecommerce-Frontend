@@ -2,12 +2,13 @@ import { useState } from "react";
 import { HiOutlineTrash } from "react-icons/hi";
 import SetQuantity from "./SetQuantity";
 import { useDispatch } from "react-redux";
-import { decreaseCartQuantity, increaseCartQuantity, removeFromCart } from "../../store/actions";
+//   import { decreaseCartQuantity, increaseCartQuantity, removeFromCart } from "../../store/actions";
 import toast from "react-hot-toast";
 // import truncateText from "../utils/truncateText";
 // import { formatPrice } from "../../utils/formatPrice";
 import truncateText from "../utils/truncateText";
 import { formatPrice } from "../utils/formatPrice";
+import { decreaseCartQuantity, increaseCartQuantity, removeFromCart } from "../../store/actions";
 
 const ItemContent = ({
     productId,
@@ -32,21 +33,21 @@ const ItemContent = ({
         ));
     };
 
-    // const handleQtyDecrease = (cartItems) => {
-    //     if (currentQuantity > 1) {
-    //         const newQuantity = currentQuantity - 1;
-    //         setCurrentQuantity(newQuantity);
-    //         dispatch(decreaseCartQuantity(cartItems, newQuantity));
-    //     }
-    // };
+    const handleQtyDecrease = (cartItems) => {
+        if (currentQuantity > 1) {
+            const newQuantity = currentQuantity - 1;
+            setCurrentQuantity(newQuantity);
+            dispatch(decreaseCartQuantity(cartItems, newQuantity));
+        }
+    };
   
-const handleQtyDecrease = (cartItems) => {
-    if (currentQuantity > 1) {
-        const newQuantity = currentQuantity - 1;
-        setCurrentQuantity(newQuantity);
-        dispatch(decreaseCartQuantity(cartItems, newQuantity));
-    }
-};
+// const handleQtyDecrease = (cartItems) => {
+//     if (currentQuantity > 1) {
+//         const newQuantity = currentQuantity - 1;
+//         setCurrentQuantity(newQuantity);
+//         dispatch(decreaseCartQuantity(cartItems, newQuantity));
+//     }
+// };
 
 
 
@@ -65,8 +66,8 @@ const handleQtyDecrease = (cartItems) => {
 
                     <div className="md:w-36 sm:w-24 w-12">
                         <img 
-                            // src={`${import.meta.env.VITE_BACK_END_URL}/images/${image}`}
-                            src={image || "https://via.placeholder.com/150"} // fallback demo image
+                             src={`${import.meta.env.VITE_BACK_END_URL}/images/${image}`}
+                            // src={image || "https://via.placeholder.com/150"} // fallback demo image
                             alt={productName}
                             className="md:h-36 sm:h-24 h-12 w-full object-cover rounded-md"/>
 

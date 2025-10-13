@@ -23,24 +23,25 @@ const ProductCard=({
     const btnLoader=false;
     const[selectedViewProduct,setSelectedViewProduct] =useState("");
     const isAvailable = quantity && Number(quantity) >0;
-    // const handleProductView = (product) => {
-    //     setSelectedViewProduct(product);
-    //     setOpenProductViewModal(true);
-    // }
+    const handleProductView = (product) => {
+        setSelectedViewProduct(product);
+        setOpenProductViewModal(true);
+    }
     //------------
     const dispatch = useDispatch();
 
-    const handleProductView = (product) => {
-        if (!about) {
-            setSelectedViewProduct(product);
-            setOpenProductViewModal(true);
-        }
-    };
+    // const handleProductView = (product) => {
+    //     if (!about) {
+    //         setSelectedViewProduct(product);
+    //         setOpenProductViewModal(true);
+    //     }
+    // };
 
     const addToCartHandler = (cartItems) => {
-        dispatch(addToCart(cartItems, 1, toast
-        ));
+        dispatch(addToCart(cartItems, 1, toast)
+    );
     };
+    
 
 
 

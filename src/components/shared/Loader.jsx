@@ -1,5 +1,4 @@
  import { RotatingLines } from "react-loader-spinner";
-// import { ClipLoader } from "react-spinners";
 
 
 const Loader = ({ text }) => {
