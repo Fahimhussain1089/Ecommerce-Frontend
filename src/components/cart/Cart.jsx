@@ -22,7 +22,7 @@ const  Cart =() => {
             <div className="flex flex-col items-center mb-12">
                 <h1 className="text-4xl font-bold text-gray-900 flex items-center gap-3">
                     <MdShoppingCart size={36} className="text-gray-700"/>
-                    welcome into my Cart 
+                    Your Cart
                 </h1>
                 <p className="text-lg text-gray-600 mt-2">All Yout Selected Product here</p>
 

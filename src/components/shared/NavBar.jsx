@@ -1,25 +1,22 @@
 import { Link, useLocation } from "react-router-dom";   // 👈 add this
-// import { FaStore } from "react-icons/fa";
 import { Badge } from "@mui/material";
-
-
 import { useState } from "react";
 import { FaShoppingCart, FaSignInAlt, FaStore } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { useSelector } from "react-redux";
-// import UserMenu from "../UserMenu";
+import UserMenu from "../UserMenu";
 
 
 const Navbar = () => {
     const path = useLocation().pathname;
      const [navbarOpen, setNavbarOpen] = useState(false);
      const { cart } = useSelector((state) => state.carts);
-    // const { user } = useSelector((state) => state.auth);
+     const { user } = useSelector((state) => state.auth);
 
     return(
        
-        <div  className="h-[70px] bg-custom-gradient text-white z-50 flex items-center sticky top-1">
+        <div  className="h-[70px] bg-custom-gradient  text-white z-50 flex items-center sticky top-0">
             <div className="lg:px-10 sm:px-10 px-4 w-full flex justify-between">
                 <Link to="/" className="flex items-center text-2xl font-bold">
                     <FaStore className="mr-2 text-3xl" />
@@ -66,9 +63,9 @@ const Navbar = () => {
                         Contact
                    </Link> 
                 </li>
-                 <li className="font-medium transition-all duration-150">
+                 <li className="font-medium transition-all duration-150  ">
                    <Link className={`${
-                    path === "/cart" ? "text-white font-semibold" : "text-gray-200"
+                    path === "/cart" ? "text-white font-normal" : "text-gray-200"
                    }`}
                     to="/cart">
                         <Badge
@@ -76,19 +73,30 @@ const Navbar = () => {
                             badgeContent={
                                 cart?.length || 0 }
                             color="primary"
-                            overlap="circular"
-                            anchorOrigin={{ vertical: 'top', horizontal: 'right', }}>
-                                <FaShoppingCart size={25} />
+                            overlap="rectangular" //"circular"
+                            anchorOrigin={{ vertical: 'top', horizontal: 'right', }}
+                             sx={{
+                                    "& .MuiBadge-badge": {
+                                    top: 12,   // 👈 push down (increase number for more space)
+                                    right: 3, // 👈 adjust left/right if needed
+                                    left: 5
+                                    },
+                                }}
+                                >
+                                
+                                <FaShoppingCart size={30} className="pt-2"  />
                         </Badge>
                    </Link> 
                 </li>
 
                  {
-                // (user && user.id) 
-                ""
+                 (user && user.id) 
+               // ""
                  ? (
-                    <li className="font-medium transition-all duration-150">
+                    <li className="font-normal transition-all duration-150">
+                        {/* bg-red-500  */}
                         <UserMenu />
+                        {/* <h1>Welcome</h1> */}
                     </li>
                 ) : (
                 <li className="font-medium transition-all duration-150">
@@ -108,7 +116,7 @@ const Navbar = () => {
                     
 
 
-                </ul>
+            </ul>
                     <button
                         onClick={() => setNavbarOpen(!navbarOpen)}
                         className="sm:hidden flex items-center sm:mt-0 mt-2">
